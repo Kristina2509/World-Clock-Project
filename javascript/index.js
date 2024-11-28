@@ -26,7 +26,17 @@ function updateTimeCity() {
         timeSy.innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
     };
     
-   
+   //Paris
+
+   let paris = document.querySelector("#paris");
+    if (paris) {
+        let datePar = paris.querySelector(".date");
+        let timePar = paris.querySelector(".time");
+        
+        let currentTime = moment().tz("Europe/Paris");
+        datePar.innerHTML = currentTime.format("MMMM Do YYYY");
+        timePar.innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
+    };
 
 };
 
