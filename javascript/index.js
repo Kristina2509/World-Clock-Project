@@ -62,7 +62,11 @@ function updateCity(event){
         </div>
         <a href="https://world-time-project-by-kristina.netlify.app/">All cities</a>
     `
-}
+}     
+
+
+
+
 updateTimeCity();
 setInterval(updateTimeCity, 1000);
 
