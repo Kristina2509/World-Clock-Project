@@ -26,10 +26,16 @@ function updateTimeCity() {
         timeSy.innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
     };
     
+   
+
 };
 
 function updateCity(event){
     let timeZone = event.target.value;
+    if (timeZone === "current") {
+        timeZone = moment.tz.guess();
+    }
+
     let cityName = timeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(timeZone);
     let cityElementDiv = document.querySelector("#cities");
@@ -44,6 +50,7 @@ function updateCity(event){
             <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>
             </div>
         </div>
+        <a href="https://world-time-project-by-kristina.netlify.app/">All cities</a>
     `
 }
 updateTimeCity();
